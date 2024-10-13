@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pixels Art Generator</title>
+    <link href="../style/output.css" rel="stylesheet">
+    <style>
+        .gridRow {
+            display: flex;
+        }
+
+        .gridCol {
+            height: 1em;
+            width: 1em;
+            border: 1px solid #ddd;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .gridCol {
+                height: 0.8em;
+                width: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-green-600">
+
+<main class="md:container mx-auto">
+    <!-- Container -->
+    <div
+            class="w-3/4 h-screen mx-auto flex flex-col items-center justify-center">
+        <!-- Option section -->
+        <div class="bg-white flex flex-col space-y-5 lg:px-16 lg:py-8 md:px-12 md:py-6 px-8 py-4 rounded-md">
+            <!-- Option container -->
+            <div class="flex md:flex-row flex-col items-center justify-center">
+                <!-- Slide -->
+                <div>
+                    <label class="block" for="width-range">Grid Width</label>
+                    <input id="width-range" max="35" min="1" type="range">
+                    <span class="text-2xl" id="width-value">00</span>
+                </div>
+
+                <div>
+                    <label class="block" for="height-range">Grid Height</label>
+                    <input id="height-range" max="35" min="1" type="range">
+                    <span class="text-2xl" id="height-value">00</span>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="order-1 md:flex md:space-x-3 grid grid-cols-2 gap-2  items-center justify-center">
+                <button class="text-white bg-green-600 px-2 py-1 rounded-md hover:bg-green-500 transition-all duration-150"
+                        id="submit-grid">Create Grid
+                </button>
+
+                <button class="order-2 text-white bg-green-600 px-2 py-1 rounded-md hover:bg-green-500 transition-all duration-150"
+                        id="clear-grid">Clear Grid
+                </button>
+
+                <input class="md:order-3 order-5 appearance-none bg-transparent md:w-16 md:h-10 cursor-pointer rounded-full mx-auto col-span-2"
+                       id="color-input" type="color">
+
+                <button class="md:order-4 order-3 text-white bg-green-600 px-2 py-1 rounded-md hover:bg-green-500 transition-all duration-150"
+                        id="erase-btn">Erase
+                </button>
+
+                <button class="md:order-5 order-4 text-white bg-green-600 px-2 py-1 rounded-md hover:bg-green-500 transition-all duration-150"
+                        id="paint-btn">Paint
+                </button>
+            </div>
+        </div>
+
+        <!-- Paint Section -->
+        <div class="containers bg-white"></div>
+    </div>
+</main>
+
+<script src="./main.js"></script>
+</body>
+
+</html>
